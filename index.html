@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prashanto Roy - Urban Designer and Architect specializing in sustainable development and community-centered design solutions">
+    <meta name="keywords" content="architecture, urban design, Prashanto Roy, Delhi, sustainable development">
+    <meta name="author" content="Prashanto Roy">
+    
+    <title>Prashanto Roy - Portfolio</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo-placeholder">
+                    <img src="images/logo.png" alt="Prashanto Roy Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='LOGO';">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link" data-page="home">About</a></li>
+                    <li><a href="#works" class="nav-link" data-page="works">Works</a></li>
+                    <li><a href="#connect" class="nav-link" data-page="connect">Connect</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="container" id="home-page">
+        <div class="grid-main">
+            <!-- Introduction Section -->
+            <section class="intro-section content-area">
+                <h1 class="text-heading-xl mb-2">Prashanto Roy</h1>
+                <p class="text-heading-md">
+                    Kindly allow me <span class="text-highlight" data-overlay="introduce">introduce</span> myself.
+                </p>
+            </section>
+
+            <!-- Works Preview Section -->
+            <section class="works-preview content-area">
+                <h2 class="text-heading-xl text-center mb-3">Works</h2>
+                <div id="works-carousel" class="works-carousel">
+                    <!-- Carousel items will be populated by JS -->
+                </div>
+                <div class="pagination-dots">
+                    <div class="dot active" data-slide="0"></div>
+                    <div class="dot" data-slide="1"></div>
+                    <div class="dot" data-slide="2"></div>
+                    <div class="dot" data-slide="3"></div>
+                </div>
+            </section>
+
+            <!-- Connect Section -->
+            <section class="connect-section content-area" id="connect">
+                <h2 class="text-heading-xl mb-2">Connect</h2>
+                <p class="text-body-lg mb-2">Let's discuss your next project</p>
+                <div class="contact-info">
+                    <p class="text-body">
+                        Email: <a href="mailto:prashanto@example.com" class="text-highlight">prashanto@example.com</a>
+                    </p>
+                    <p class="text-body">
+                        LinkedIn: <a href="https://linkedin.com/in/prashanto-roy" class="text-highlight" target="_blank">Prashanto Roy</a>
+                    </p>
+                    <p class="text-body">
+                        Portfolio: <a href="downloads/portfolio.pdf" class="text-highlight" download>Download PDF</a>
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Works Page (Hidden by default) -->
+    <div id="works-page" class="works-container hidden">
+        <!-- Content will be loaded dynamically -->
+    </div>
+
+    <!-- Project Pages Container -->
+    <div id="project-pages" class="hidden">
+        <!-- Individual project pages will be loaded here -->
+    </div>
+
+    <!-- Balloon Overlays Container -->
+    <div id="overlays-container">
+        <!-- Overlays will be loaded dynamically -->
+    </div>
+
+    <!-- Templates -->
+    <script type="text/template" id="carousel-item-template">
+        <div class="carousel-item">
+            <h3 class="text-heading-md text-center mb-2">{{title}}</h3>
+            <p class="text-body text-center">{{description}}</p>
+        </div>
+    </script>
+
+    <script type="text/template" id="overlay-template">
+        <div id="{{id}}" class="balloon-overlay">
+            <button class="overlay-close" aria-label="Close overlay">&times;</button>
+            <h3 class="text-heading-md mb-2">{{title}}</h3>
+            <div class="overlay-content">{{content}}</div>
+        </div>
+    </script>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/components/carousel.js"></script>
+    <script src="js/components/overlay.js"></script>
+    <script src="js/components/lazyload.js"></script>
+    <script src="js/pages/home.js"></script>
+    <script src="js/pages/works.js"></script>
+    <script src="js/pages/project.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
