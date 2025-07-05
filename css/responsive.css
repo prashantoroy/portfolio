@@ -1,0 +1,375 @@
+/* Responsive Design - Media Queries */
+
+/* Tablet Landscape (1024px) */
+@media (max-width: 1024px) {
+    /* Works Grid */
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .works-sidebar {
+        position: relative;
+        top: 0;
+        display: flex;
+        overflow-x: auto;
+        border-bottom: 1px solid var(--light-gray);
+        padding-bottom: var(--spacing-sm);
+        margin-bottom: var(--spacing-lg);
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .work-category {
+        border-bottom: none;
+        border-right: 1px solid var(--light-gray);
+        white-space: nowrap;
+        min-width: 150px;
+        flex-shrink: 0;
+    }
+
+    .work-category:last-child {
+        border-right: none;
+    }
+
+    .work-category::before {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 3px;
+        transform: scaleX(0);
+    }
+
+    .work-category:hover::before,
+    .work-category.active::before {
+        transform: scaleX(1);
+    }
+
+    .subcategories {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--white);
+        border: 1px solid var(--light-gray);
+        border-radius: var(--radius-sm);
+        box-shadow: var(--shadow-md);
+        min-width: 200px;
+        z-index: var(--z-dropdown);
+    }
+
+    /* Grid utilities */
+    .grid-4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Tablet Portrait (768px) */
+@media (max-width: 768px) {
+    /* Main Grid */
+    .grid-main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: var(--spacing-lg);
+        padding: calc(var(--header-height) + 2rem) 0 var(--spacing-lg);
+    }
+
+    .intro-section {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .works-preview {
+        grid-column: 1;
+        grid-row: 2;
+        min-height: 400px;
+    }
+
+    .connect-section {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    /* Navigation */
+    .nav-links {
+        gap: var(--spacing-xs);
+    }
+
+    .nav-link {
+        font-size: 1.25rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .logo-placeholder {
+        width: 70px;
+        height: 72px;
+    }
+
+    /* Typography adjustments */
+    .text-heading-xl {
+        font-size: 2rem;
+    }
+
+    .text-heading-lg {
+        font-size: 1.75rem;
+    }
+
+    .text-heading-md {
+        font-size: 1.5rem;
+    }
+
+    /* Balloon Overlays - Full screen on mobile */
+    .balloon-overlay {
+        position: fixed !important;
+        left: var(--spacing-sm) !important;
+        right: var(--spacing-sm) !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        max-width: none;
+        max-height: 85vh;
+    }
+
+    .balloon-overlay::before,
+    .balloon-overlay::after {
+        display: none;
+    }
+
+    /* Project navigation */
+    .project-nav {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-sm);
+    }
+
+    .project-nav-item {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    /* Grid utilities */
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    /* Content areas */
+    .content-area {
+        padding: var(--spacing-md);
+    }
+
+    /* Site plan */
+    .site-plan-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Work categories mobile */
+    .work-category {
+        padding: var(--spacing-sm);
+    }
+
+    .category-title {
+        font-size: 1.125rem;
+    }
+}
+
+/* Mobile (480px) */
+@media (max-width: 480px) {
+    /* Container padding */
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    /* Navigation */
+    .nav-header {
+        padding: var(--spacing-xs) 0;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    /* Typography */
+    .text-heading-xl {
+        font-size: 1.75rem;
+    }
+
+    .text-heading-lg {
+        font-size: 1.5rem;
+    }
+
+    .text-heading-md {
+        font-size: 1.25rem;
+    }
+
+    .text-body-lg {
+        font-size: 1.125rem;
+    }
+
+    /* Grid utilities */
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    /* Buttons */
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Project cards */
+    .project-card {
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* Pagination dots */
+    .pagination-dots {
+        gap: var(--spacing-xs);
+    }
+
+    .dot {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Small Mobile (360px) */
+@media (max-width: 360px) {
+    /* Navigation - Stack vertically */
+    .nav-container {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Further reduce font sizes */
+    .nav-link {
+        font-size: 0.875rem;
+    }
+
+    .text-heading-xl {
+        font-size: 1.5rem;
+    }
+}
+
+/* Large Screens (1920px+) */
+@media (min-width: 1920px) {
+    /* Scale up container */
+    .container {
+        max-width: 1920px;
+    }
+
+    /* Increase grid gaps */
+    .grid-main {
+        gap: 5rem;
+    }
+
+    /* Scale up typography slightly */
+    :root {
+        --font-size-xl: 3.5rem;
+        --font-size-lg: 2.75rem;
+        --font-size-md: 2.125rem;
+        --font-size-body-lg: 1.375rem;
+        --font-size-body: 1.125rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    /* Hide navigation and interactive elements */
+    .nav-header,
+    .pagination-dots,
+    .overlay-close,
+    .btn,
+    .work-category::before,
+    .text-highlight::after {
+        display: none !important;
+    }
+
+    /* Reset colors for print */
+    body {
+        background: white;
+        color: black;
+    }
+
+    .content-area {
+        background: white;
+        border: 1px solid #ccc;
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    /* Ensure links are visible */
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    /* Show link URLs */
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+
+    /* Page breaks */
+    .project-section {
+        break-before: auto;
+        break-after: auto;
+        break-inside: avoid;
+    }
+
+    /* Expand all collapsed content */
+    .subcategories,
+    .work-category.active .subcategories {
+        max-height: none !important;
+        display: block !important;
+    }
+}
+
+/* Hover States - Disable on touch devices */
+@media (hover: none) {
+    .text-highlight:hover::after,
+    .nav-link:hover::after,
+    .work-category:hover::before,
+    .work-category:hover,
+    .subcategory:hover,
+    .project-card:hover,
+    .btn:hover {
+        transform: none;
+        background: inherit;
+        color: inherit;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --accent-red: #CC0000;
+        --medium-gray: #666666;
+    }
+
+    .content-area {
+        border: 2px solid var(--primary-black);
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
