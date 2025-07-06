@@ -1,203 +1,103 @@
-// Main Portfolio Application
-class PortfolioApp {
-    constructor() {
-        this.currentPage = 'home';
-        this.modules = {};
-        this.init();
-    }
+// Landing Page JavaScript
 
-    init() {
-        // Wait for DOM to be ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => this.initialize());
-        } else {
-            this.initialize();
-        }
-    }
-
-    initialize() {
-        // Initialize modules
-        this.modules.carousel = new Carousel();
-        this.modules.overlay = new OverlayManager();
-        this.modules.lazyLoad = new LazyLoad();
-        this.modules.navigation = new Navigation(this);
-
-        // Initialize page-specific modules
-        this.initializePages();
-
-        // Setup global event listeners
-        this.setupEventListeners();
-
-        // Add loading animation
-        this.animatePageLoad();
-
-        // Initialize router
-        this.initRouter();
-    }
-
-    initializePages() {
-        // Initialize home page
-        if (document.getElementById('home-page')) {
-            this.modules.homePage = new HomePage();
-        }
-    }
-
-    setupEventListeners() {
-        // Navigation clicks
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', (e) => this.handleNavigation(e));
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                this.modules.overlay?.hideAll();
-            }
-        });
-
-        // Handle back/forward browser buttons
-        window.addEventListener('popstate', (e) => {
-            if (e.state && e.state.page) {
-                this.showPage(e.state.page, false);
-            }
-        });
-    }
-
-    handleNavigation(event) {
-        const link = event.target;
-        const page = link.dataset.page;
-
-        if (page) {
-            event.preventDefault();
-            this.showPage(page);
-        } else if (link.href.includes('#')) {
-            event.preventDefault();
-            const target = document.querySelector(link.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-    }
-
-    showPage(page, updateHistory = true) {
-        // Hide all pages
-        document.querySelectorAll('[id$="-page"]').forEach(p => {
-            p.classList.add('hidden');
-        });
-
-        // Show requested page
-        const pageElement = document.getElementById(`${page}-page`);
-        if (pageElement) {
-            pageElement.classList.remove('hidden');
-            this.currentPage = page;
-
-            // Update browser history
-            if (updateHistory) {
-                const url = page === 'home' ? '/' : `/${page}`;
-                window.history.pushState({ page }, '', url);
-            }
-
-            // Update active nav
-            this.updateActiveNav(page);
-
-            // Scroll to top
-            window.scrollTo(0, 0);
-
-            // Load page-specific content
-            this.loadPageContent(page);
-        }
-    }
-
-    updateActiveNav(page) {
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.toggle('active', link.dataset.page === page);
-        });
-    }
-
-    loadPageContent(page) {
-        switch(page) {
-            case 'works':
-                if (!this.modules.worksPage) {
-                    this.modules.worksPage = new WorksPage();
-                }
-                this.modules.worksPage.load();
-                break;
-            case 'project':
-                if (!this.modules.projectPage) {
-                    this.modules.projectPage = new ProjectPage();
-                }
-                break;
-        }
-    }
-
-    animatePageLoad() {
-        document.body.style.opacity = '0';
-        setTimeout(() => {
-            document.body.style.transition = 'opacity 0.6s ease';
-            document.body.style.opacity = '1';
-        }, 100);
-    }
-
-    initRouter() {
-        // Handle initial route
-        const path = window.location.pathname;
-        if (path.includes('works')) {
-            this.showPage('works', false);
-        } else if (path.includes('project')) {
-            this.showPage('project', false);
-        }
-    }
-}
-
-// Navigation Handler
-class Navigation {
-    constructor(app) {
-        this.app = app;
-        this.setupSmoothScroll();
-    }
-
-    setupSmoothScroll() {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', (e) => {
-                const target = document.querySelector(anchor.getAttribute('href'));
-                if (target) {
-                    e.preventDefault();
-                    const offset = 100; // Account for fixed header
-                    const targetPosition = target.offsetTop - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
+document.addEventListener('DOMContentLoaded', function() {
+    // Carousel
+    const carousel = {
+        currentSlide: 0,
+        items: document.querySelectorAll('.carousel-item'),
+        dots: document.querySelectorAll('.dot'),
+        
+        init() {
+            // Dot clicks
+            this.dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => this.showSlide(index));
             });
-        });
-    }
-}
-
-// Performance monitoring
-class PerformanceMonitor {
-    static logMetrics() {
-        if ('performance' in window) {
-            window.addEventListener('load', () => {
-                const perfData = window.performance.timing;
-                const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-                console.log('Performance Metrics:', {
-                    pageLoad: pageLoadTime + 'ms',
-                    domReady: perfData.domContentLoadedEventEnd - perfData.navigationStart + 'ms',
-                    resources: performance.getEntriesByType('resource').length
+            
+            // Auto-advance
+            setInterval(() => this.nextSlide(), 5000);
+        },
+        
+        showSlide(index) {
+            this.items.forEach(item => item.classList.remove('active'));
+            this.dots.forEach(dot => dot.classList.remove('active'));
+            
+            this.items[index].classList.add('active');
+            this.dots[index].classList.add('active');
+            this.currentSlide = index;
+        },
+        
+        nextSlide() {
+            const next = (this.currentSlide + 1) % this.items.length;
+            this.showSlide(next);
+        }
+    };
+    
+    // Overlay System
+    const overlays = {
+        activeOverlay: null,
+        
+        init() {
+            // Text highlight clicks
+            document.querySelectorAll('.text-highlight[data-overlay]').forEach(trigger => {
+                trigger.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const overlayId = trigger.dataset.overlay + '-overlay';
+                    this.show(overlayId);
                 });
             });
+            
+            // Close buttons
+            document.querySelectorAll('.overlay-close').forEach(btn => {
+                btn.addEventListener('click', () => this.hide());
+            });
+            
+            // Click outside to close
+            document.addEventListener('click', (e) => {
+                if (this.activeOverlay && 
+                    !e.target.closest('.overlay') && 
+                    !e.target.closest('.text-highlight')) {
+                    this.hide();
+                }
+            });
+            
+            // ESC key to close
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && this.activeOverlay) {
+                    this.hide();
+                }
+            });
+        },
+        
+        show(overlayId) {
+            this.hide(); // Close any open overlay
+            
+            const overlay = document.getElementById(overlayId);
+            if (overlay) {
+                overlay.classList.add('active');
+                this.activeOverlay = overlay;
+            }
+        },
+        
+        hide() {
+            if (this.activeOverlay) {
+                this.activeOverlay.classList.remove('active');
+                this.activeOverlay = null;
+            }
         }
-    }
-}
-
-// Initialize app
-const portfolioApp = new PortfolioApp();
-
-// Export for global access if needed
-window.PortfolioApp = portfolioApp;
-
-// Log performance metrics in development
-if (window.location.hostname === 'localhost') {
-    PerformanceMonitor.logMetrics();
-}
+    };
+    
+    // Initialize
+    carousel.init();
+    overlays.init();
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+});
