@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1728, initial-scale=1.0">
     <title>Prashanto Roy - Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,70 +11,81 @@
 </head>
 <body>
     <div class="container">
-        <!-- Navigation -->
-        <nav class="nav-header">
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-link active">About</a></li>
-                <li><a href="works.html" class="nav-link">Works</a></li>
-                <li><a href="#connect" class="nav-link">Connect</a></li>
-            </ul>
-        </nav>
-
+        <!-- Browser Header -->
+        <div class="browser-header"></div>
+        
         <!-- Logo -->
         <div class="logo">LOGO</div>
-
-        <!-- Main Content -->
-        <main class="home-grid">
-            <!-- Intro Section -->
-            <section class="intro-section">
-                <h1>Prashanto Roy</h1>
-                <p>Kindly allow me <span class="text-highlight" data-overlay="introduce">introduce</span> myself.</p>
-            </section>
-
-            <!-- Connect Section -->
-            <section class="connect-section" id="connect">
-                <h2>Connect</h2>
-                <div class="contact-info">
-                    <p>Email: prashanto@example.com</p>
-                    <p>LinkedIn: Prashanto Roy</p>
-                    <p>Portfolio: Download PDF</p>
+        
+        <!-- Navigation -->
+        <nav>
+            <a href="index.html" class="nav-link about active">About</a>
+            <a href="works.html" class="nav-link works">Works</a>
+            <a href="#connect" class="nav-link connect">Connect</a>
+        </nav>
+        
+        <!-- Intro Section -->
+        <section class="intro-section">
+            <h1>Prashanto Roy</h1>
+            <p>
+                <span class="normal">Kindly allow me </span><span class="highlight" data-overlay="introduce">introduce</span><span class="normal"> myself.</span>
+            </p>
+        </section>
+        
+        <!-- Connect Section -->
+        <section class="connect-section" id="connect">
+            <h2>Connect</h2>
+            <div class="contact-info">
+                <p>Email: prashanto@example.com</p>
+                <p>LinkedIn: Prashanto Roy</p>
+                <p>Portfolio: Download PDF</p>
+            </div>
+        </section>
+        
+        <!-- Works Section -->
+        <section class="works-section">
+            <h2>Works</h2>
+            <div class="carousel">
+                <div class="carousel-item active">
+                    <h3>Architecture</h3>
+                    <p>Sustainable design solutions</p>
                 </div>
-            </section>
-
-            <!-- Works Section -->
-            <section class="works-section">
-                <h2>Works</h2>
-                <div class="carousel">
-                    <div class="carousel-item active">
-                        <h3>Architecture</h3>
-                        <p>Sustainable design solutions</p>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>Design</h3>
-                        <p>Creative visual explorations</p>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>Freehand</h3>
-                        <p>Artistic sketches</p>
-                    </div>
+                <div class="carousel-item">
+                    <h3>Design</h3>
+                    <p>Creative visual explorations</p>
                 </div>
-                <div class="pagination-dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+                <div class="carousel-item">
+                    <h3>Freehand</h3>
+                    <p>Artistic sketches and drawings</p>
                 </div>
-            </section>
-        </main>
+            </div>
+            <div class="pagination-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
     </div>
-
+    
     <!-- Introduce Overlay -->
     <div id="introduce-overlay" class="overlay">
         <button class="overlay-close">&times;</button>
         <h3>About Prashanto Roy</h3>
-        <p>Urban Designer and Architect specializing in sustainable development.</p>
+        <p>Urban Designer and Architect with expertise in sustainable development, specializing in large-scale redevelopment projects and community-centered design solutions.</p>
+        <h4>Education</h4>
+        <ul>
+            <li>Master of Urban Design - School of Planning and Architecture, Delhi</li>
+            <li>Bachelor of Architecture</li>
+        </ul>
+        <h4>Focus Areas</h4>
+        <ul>
+            <li>Sustainable Urban Development</li>
+            <li>Community-Centered Design</li>
+            <li>Public Space Revitalization</li>
+        </ul>
     </div>
-
+    
     <script src="js/main.js"></script>
 </body>
 </html>
