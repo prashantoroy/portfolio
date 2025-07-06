@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works - Prashanto Roy</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo-placeholder">
+                    <img src="images/logo.png" alt="Prashanto Roy Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='LOGO';">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">About</a></li>
+                    <li><a href="works.html" class="nav-link active">Works</a></li>
+                    <li><a href="index.html#connect" class="nav-link">Connect</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Works Page Content -->
+    <div class="works-page-layout">
+        <div class="container-fluid">
+            <div class="works-horizontal-grid">
+                <!-- Left Sidebar - Categories -->
+                <aside class="works-sidebar-vertical">
+                    <h1 class="text-heading-lg mb-3">WORKS</h1>
+                    <div class="works-categories-vertical">
+                        <div class="work-category-vertical active" data-category="architecture">
+                            Architecture
+                        </div>
+                        <div class="work-category-vertical" data-category="design">
+                            Design
+                        </div>
+                        <div class="work-category-vertical" data-category="freehand">
+                            Freehand
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Right Content - Subcategories and Projects -->
+                <main class="works-content-horizontal">
+                    <!-- Architecture Subcategories -->
+                    <div id="architecture-content" class="category-content">
+                        <div class="subcategories-horizontal">
+                            <div class="subcategory-item active" data-subcategory="academic">Academic</div>
+                            <div class="subcategory-item" data-subcategory="professional">Professional</div>
+                            <div class="subcategory-item" data-subcategory="other">Other Projects</div>
+                        </div>
+                        <div class="projects-display">
+                            <!-- Projects will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Design Subcategories -->
+                    <div id="design-content" class="category-content hidden">
+                        <div class="subcategories-horizontal">
+                            <div class="subcategory-item active" data-subcategory="graphic">Graphic</div>
+                            <div class="subcategory-item" data-subcategory="motion">Motion</div>
+                            <div class="subcategory-item" data-subcategory="product">Product</div>
+                        </div>
+                        <div class="projects-display">
+                            <!-- Projects will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Freehand Content -->
+                    <div id="freehand-content" class="category-content hidden">
+                        <div class="projects-display">
+                            <!-- Freehand projects will be loaded here -->
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/pages/works.js"></script>
+    <script>
+        // Initialize Works Page
+        document.addEventListener('DOMContentLoaded', function() {
+            const worksPage = new WorksPage();
+            worksPage.init();
+        });
+    </script>
+</body>
+</html>
