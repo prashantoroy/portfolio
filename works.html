@@ -3,381 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Works - Prashanto Roy Portfolio">
     <title>Works - Prashanto Roy</title>
-    
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-    <!-- Container -->
     <div class="container">
         <!-- Navigation -->
         <nav class="nav-header">
-            <div class="nav-container">
-                <ul class="nav-links">
-                    <li><a href="index.html" class="nav-link">About</a></li>
-                    <li><a href="works.html" class="nav-link active">Works</a></li>
-                    <li><a href="index.html#connect" class="nav-link">Connect</a></li>
-                </ul>
-            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">About</a></li>
+                <li><a href="works.html" class="nav-link active">Works</a></li>
+                <li><a href="index.html#connect" class="nav-link">Connect</a></li>
+            </ul>
         </nav>
 
         <!-- Logo -->
-        <div class="logo">
-            <img src="images/logo.png" alt="Logo" style="width: 100%; height: 100%; object-fit: contain;">
-        </div>
+        <div class="logo">LOGO</div>
 
         <!-- Works Content -->
         <main class="works-layout">
-            <!-- Works Title -->
             <h1>WORKS</h1>
 
-            <!-- Categories -->
+            <!-- Categories - Left Sidebar -->
             <div class="categories">
-                <div class="category active" data-category="architecture">Architecture</div>
+                <div class="category" data-category="architecture">Architecture</div>
                 <div class="category" data-category="design">Design</div>
                 <div class="category" data-category="freehand">Freehand</div>
             </div>
-
-            <!-- Content Area -->
-            <section class="works-content">
-                <!-- Content appears on hover/click -->
-            </section>
         </main>
-    </div>
 
-    <!-- Category Hover Overlays -->
-    
-    <!-- Architecture Overlay -->
-    <div class="category-overlay" id="architecture-overlay">
-        <div class="subcategories">
-            <div class="subcategory" data-subcategory="academic">Academic</div>
-            <div class="subcategory" data-subcategory="professional">Professional</div>
-            <div class="subcategory" data-subcategory="other">Other Projects</div>
-        </div>
-    </div>
-
-    <!-- Design Overlay -->
-    <div class="category-overlay" id="design-overlay">
-        <div class="subcategories">
-            <div class="subcategory" data-subcategory="graphic">Graphic</div>
-            <div class="subcategory" data-subcategory="motion">Motion</div>
-            <div class="subcategory" data-subcategory="product">Product</div>
-        </div>
-    </div>
-
-    <!-- Freehand shows projects directly, no subcategories -->
-
-    <!-- Subcategory Project Overlays -->
-    
-    <!-- 1.1 Academic Projects Overlay -->
-    <div class="project-overlay" id="academic-overlay">
-        <div class="project-grid">
-            <div class="project-item" data-project="sarojini-nagar">
-                <img src="images/projects/sarojini-nagar/thumb.jpg" alt="Sarojini Nagar">
-                <p>Sarojini Nagar Urban Design</p>
-            </div>
-            <div class="project-item" data-project="thesis">
-                <img src="images/projects/thesis/thumb.jpg" alt="Thesis">
-                <p>Thesis</p>
-            </div>
-            <div class="project-item" data-project="federated-bim">
-                <img src="images/projects/fed-bim/thumb.jpg" alt="Federated BIM">
-                <p>Federated BIM</p>
+        <!-- OVERLAYS - Outside of main content -->
+        
+        <!-- Architecture Subcategories Overlay -->
+        <div class="category-overlay" id="architecture-overlay">
+            <div class="subcategories">
+                <div class="subcategory" data-subcategory="academic">Academic</div>
+                <div class="subcategory" data-subcategory="professional">Professional</div>
+                <div class="subcategory" data-subcategory="other">Other Projects</div>
             </div>
         </div>
-    </div>
 
-    <!-- 1.2 Professional Projects Overlay -->
-    <div class="project-overlay" id="professional-overlay">
-        <div class="project-grid">
-            <div class="project-item" data-project="dda">
-                <img src="images/projects/dda/thumb.jpg" alt="Delhi Dev Authority">
-                <p>Delhi Dev. Authority</p>
-            </div>
-            <div class="project-item" data-project="formnorm">
-                <img src="images/projects/formnorm/thumb.jpg" alt="Formnorm">
-                <p>Formnorm D & B</p>
-            </div>
-            <div class="project-item" data-project="freelance">
-                <img src="images/projects/freelance/thumb.jpg" alt="Freelance">
-                <p>Freelance</p>
+        <!-- Design Subcategories Overlay -->
+        <div class="category-overlay" id="design-overlay">
+            <div class="subcategories">
+                <div class="subcategory" data-subcategory="graphic">Graphic</div>
+                <div class="subcategory" data-subcategory="motion">Motion</div>
+                <div class="subcategory" data-subcategory="product">Product</div>
             </div>
         </div>
-    </div>
 
-    <!-- 1.3 Other Projects Overlay -->
-    <div class="project-overlay" id="other-overlay">
-        <div class="project-grid">
-            <div class="project-item" data-project="cr-park">
-                <img src="images/projects/cr-park/thumb.jpg" alt="CR Park Market">
-                <p>CR Park Market</p>
+        <!-- Freehand Projects Overlay (no subcategories) -->
+        <div class="category-overlay" id="freehand-overlay">
+            <div class="project-grid">
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Sketches">
+                    <p>Urban Sketches</p>
+                </div>
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Paintings">
+                    <p>Paintings</p>
+                </div>
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Drawings">
+                    <p>Drawings</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- 2.1 Graphic Design Overlay -->
-    <div class="project-overlay" id="graphic-overlay">
-        <div class="project-grid">
-            <div class="project-item" data-project="branding">
-                <img src="images/projects/branding/thumb.jpg" alt="Branding">
-                <p>Brand Identity</p>
-            </div>
-            <div class="project-item" data-project="posters">
-                <img src="images/projects/posters/thumb.jpg" alt="Posters">
-                <p>Poster Design</p>
+        <!-- Academic Projects Overlay -->
+        <div class="project-overlay" id="academic-overlay">
+            <div class="project-grid">
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Sarojini Nagar">
+                    <p>Sarojini Nagar Urban Design</p>
+                </div>
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Thesis">
+                    <p>Thesis</p>
+                </div>
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Fed BIM">
+                    <p>Federated BIM</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- 2.2 Motion Design Overlay -->
-    <div class="project-overlay" id="motion-overlay">
-        <div class="project-grid">
-            <div class="project-item" data-project="animation">
-                <img src="images/projects/animation/thumb.jpg" alt="Animation">
-                <p>Motion Graphics</p>
-            </div>
-            <div class="project-item" data-project="video">
-                <img src="images/projects/video/thumb.jpg" alt="Video">
-                <p>Video Projects</p>
+        <!-- Professional Projects Overlay -->
+        <div class="project-overlay" id="professional-overlay">
+            <div class="project-grid">
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="DDA">
+                    <p>Delhi Dev. Authority</p>
+                </div>
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Formnorm">
+                    <p>Formnorm D & B</p>
+                </div>
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Freelance">
+                    <p>Freelance</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- 2.3 Product Design Overlay -->
-    <div class="project-overlay" id="product-overlay">
-        <div class="project-grid">
-            <div class="project-item" data-project="furniture">
-                <img src="images/projects/furniture/thumb.jpg" alt="Furniture">
-                <p>Furniture Design</p>
-            </div>
-            <div class="project-item" data-project="objects">
-                <img src="images/projects/objects/thumb.jpg" alt="Objects">
-                <p>Object Design</p>
+        <!-- Other Projects Overlay -->
+        <div class="project-overlay" id="other-overlay">
+            <div class="project-grid">
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="CR Park">
+                    <p>CR Park Market</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- 3. Freehand Projects - Direct overlay (no subcategories) -->
-    <div class="category-overlay" id="freehand-overlay">
-        <div class="project-grid">
-            <div class="project-item" data-project="sketches">
-                <img src="images/projects/sketches/thumb.jpg" alt="Sketches">
-                <p>Urban Sketches</p>
+        <!-- Design Subcategory Overlays -->
+        <div class="project-overlay" id="graphic-overlay">
+            <div class="project-grid">
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Branding">
+                    <p>Brand Identity</p>
+                </div>
             </div>
-            <div class="project-item" data-project="paintings">
-                <img src="images/projects/paintings/thumb.jpg" alt="Paintings">
-                <p>Paintings</p>
+        </div>
+
+        <div class="project-overlay" id="motion-overlay">
+            <div class="project-grid">
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Motion">
+                    <p>Motion Graphics</p>
+                </div>
             </div>
-            <div class="project-item" data-project="drawings">
-                <img src="images/projects/drawings/thumb.jpg" alt="Drawings">
-                <p>Architectural Drawings</p>
+        </div>
+
+        <div class="project-overlay" id="product-overlay">
+            <div class="project-grid">
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Product">
+                    <p>Furniture Design</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="js/works.js"></script>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Works - Prashanto Roy Portfolio">
-    <title>Works - Prashanto Roy</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-
-<body>
-    <!-- Navigation -->
-    <nav class="nav-header">
-        <div class="container">
-            <div class="nav-container">
-                <div class="logo">LOGO</div>
-                <ul class="nav-links">
-                    <li><a href="index.html" class="nav-link">About</a></li>
-                    <li><a href="works.html" class="nav-link active">Works</a></li>
-                    <li><a href="index.html#connect" class="nav-link">Connect</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Works Content -->
-    <main class="works-layout">
-        <!-- Left Sidebar -->
-        <aside class="works-sidebar">
-            <h1 class="heading-lg">WORKS</h1>
-            <div class="categories">
-                <div class="category active" data-category="architecture">Architecture</div>
-                <div class="category" data-category="design">Design</div>
-                <div class="category" data-category="freehand">Freehand</div>
-            </div>
-        </aside>
-
-        <!-- Right Content Area -->
-        <section class="works-content">
-            <!-- Default: Architecture View -->
-            <div class="category-view active" id="architecture-view">
-                <!-- Empty - Subcategories appear on hover -->
-            </div>
-            
-            <div class="category-view" id="design-view">
-                <!-- Empty - Subcategories appear on hover -->
-            </div>
-            
-            <div class="category-view" id="freehand-view">
-                <!-- Empty - Content appears on hover -->
-            </div>
-        </section>
-    </main>
-
-    <!-- Category Hover Overlays -->
-    
-    <!-- Architecture Overlay -->
-    <div class="category-overlay" id="architecture-overlay">
-        <div class="subcategories">
-            <div class="subcategory" data-subcategory="academic">Academic</div>
-            <div class="subcategory" data-subcategory="professional">Professional</div>
-            <div class="subcategory" data-subcategory="other">Other Projects</div>
-        </div>
-    </div>
-
-    <!-- Design Overlay -->
-    <div class="category-overlay" id="design-overlay">
-        <div class="subcategories">
-            <div class="subcategory" data-subcategory="graphic">Graphic</div>
-            <div class="subcategory" data-subcategory="motion">Motion</div>
-            <div class="subcategory" data-subcategory="product">Product</div>
-        </div>
-    </div>
-
-    <!-- Freehand shows projects directly, no subcategories -->
-
-    <!-- Subcategory Project Overlays -->
-    
-    <!-- 1.1 Academic Projects Overlay -->
-    <div class="project-overlay" id="academic-overlay">
-        <div class="project-grid">
-            <div class="project-item" data-project="sarojini-nagar">
-                <img src="images/projects/sarojini-nagar/thumb.jpg" alt="Sarojini Nagar">
-                <p>Sarojini Nagar Urban Design</p>
-            </div>
-            <div class="project-item" data-project="thesis">
-                <img src="images/projects/thesis/thumb.jpg" alt="Thesis">
-                <p>Thesis</p>
-            </div>
-            <div class="project-item" data-project="federated-bim">
-                <img src="images/projects/fed-bim/thumb.jpg" alt="Federated BIM">
-                <p>Federated BIM</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 1.2 Professional Projects Overlay -->
-    <div class="project-overlay" id="professional-overlay">
-        <div class="project-grid">
-            <div class="project-item" data-project="dda">
-                <img src="images/projects/dda/thumb.jpg" alt="Delhi Dev Authority">
-                <p>Delhi Dev. Authority</p>
-            </div>
-            <div class="project-item" data-project="formnorm">
-                <img src="images/projects/formnorm/thumb.jpg" alt="Formnorm">
-                <p>Formnorm D & B</p>
-            </div>
-            <div class="project-item" data-project="freelance">
-                <img src="images/projects/freelance/thumb.jpg" alt="Freelance">
-                <p>Freelance</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 1.3 Other Projects Overlay -->
-    <div class="project-overlay" id="other-overlay">
-        <div class="project-grid">
-            <div class="project-item" data-project="cr-park">
-                <img src="images/projects/cr-park/thumb.jpg" alt="CR Park Market">
-                <p>CR Park Market</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 2.1 Graphic Design Overlay -->
-    <div class="project-overlay" id="graphic-overlay">
-        <div class="project-grid">
-            <div class="project-item" data-project="branding">
-                <img src="images/projects/branding/thumb.jpg" alt="Branding">
-                <p>Brand Identity</p>
-            </div>
-            <div class="project-item" data-project="posters">
-                <img src="images/projects/posters/thumb.jpg" alt="Posters">
-                <p>Poster Design</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 2.2 Motion Design Overlay -->
-    <div class="project-overlay" id="motion-overlay">
-        <div class="project-grid">
-            <div class="project-item" data-project="animation">
-                <img src="images/projects/animation/thumb.jpg" alt="Animation">
-                <p>Motion Graphics</p>
-            </div>
-            <div class="project-item" data-project="video">
-                <img src="images/projects/video/thumb.jpg" alt="Video">
-                <p>Video Projects</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 2.3 Product Design Overlay -->
-    <div class="project-overlay" id="product-overlay">
-        <div class="project-grid">
-            <div class="project-item" data-project="furniture">
-                <img src="images/projects/furniture/thumb.jpg" alt="Furniture">
-                <p>Furniture Design</p>
-            </div>
-            <div class="project-item" data-project="objects">
-                <img src="images/projects/objects/thumb.jpg" alt="Objects">
-                <p>Object Design</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 3. Freehand Projects - Direct overlay (no subcategories) -->
-    <div class="category-overlay" id="freehand-overlay">
-        <div class="project-grid">
-            <div class="project-item" data-project="sketches">
-                <img src="images/projects/sketches/thumb.jpg" alt="Sketches">
-                <p>Urban Sketches</p>
-            </div>
-            <div class="project-item" data-project="paintings">
-                <img src="images/projects/paintings/thumb.jpg" alt="Paintings">
-                <p>Paintings</p>
-            </div>
-            <div class="project-item" data-project="drawings">
-                <img src="images/projects/drawings/thumb.jpg" alt="Drawings">
-                <p>Architectural Drawings</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
     <script src="js/works.js"></script>
 </body>
 </html>
