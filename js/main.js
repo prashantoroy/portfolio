@@ -1,103 +1,152 @@
-// Landing Page JavaScript
+// Works Page JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Carousel
-    const carousel = {
-        currentSlide: 0,
-        items: document.querySelectorAll('.carousel-item'),
-        dots: document.querySelectorAll('.dot'),
+    const worksSystem = {
+        activeCategory: null,
+        activeSubcategory: null,
+        hoverTimeout: null,
         
         init() {
-            // Dot clicks
-            this.dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => this.showSlide(index));
-            });
-            
-            // Auto-advance
-            setInterval(() => this.nextSlide(), 5000);
+            this.setupCategoryHovers();
+            this.setupSubcategoryHovers();
+            this.setupProjectClicks();
+            this.setupClickHandlers();
         },
         
-        showSlide(index) {
-            this.items.forEach(item => item.classList.remove('active'));
-            this.dots.forEach(dot => dot.classList.remove('active'));
+        // Category hover shows subcategories
+        setupCategoryHovers() {
+            const categories = document.querySelectorAll('.category');
             
-            this.items[index].classList.add('active');
-            this.dots[index].classList.add('active');
-            this.currentSlide = index;
-        },
-        
-        nextSlide() {
-            const next = (this.currentSlide + 1) % this.items.length;
-            this.showSlide(next);
-        }
-    };
-    
-    // Overlay System
-    const overlays = {
-        activeOverlay: null,
-        
-        init() {
-            // Text highlight clicks
-            document.querySelectorAll('.text-highlight[data-overlay]').forEach(trigger => {
-                trigger.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const overlayId = trigger.dataset.overlay + '-overlay';
-                    this.show(overlayId);
+            categories.forEach(category => {
+                category.addEventListener('mouseenter', () => {
+                    clearTimeout(this.hoverTimeout);
+                    this.showCategoryOverlay(category.dataset.category);
+                });
+                
+                category.addEventListener('mouseleave', () => {
+                    this.hoverTimeout = setTimeout(() => {
+                        this.hideCategoryOverlay();
+                    }, 300);
                 });
             });
             
-            // Close buttons
-            document.querySelectorAll('.overlay-close').forEach(btn => {
-                btn.addEventListener('click', () => this.hide());
-            });
-            
-            // Click outside to close
-            document.addEventListener('click', (e) => {
-                if (this.activeOverlay && 
-                    !e.target.closest('.overlay') && 
-                    !e.target.closest('.text-highlight')) {
-                    this.hide();
-                }
-            });
-            
-            // ESC key to close
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && this.activeOverlay) {
-                    this.hide();
-                }
+            // Keep overlay open when hovering over it
+            document.querySelectorAll('.category-overlay').forEach(overlay => {
+                overlay.addEventListener('mouseenter', () => {
+                    clearTimeout(this.hoverTimeout);
+                });
+                
+                overlay.addEventListener('mouseleave', () => {
+                    this.hoverTimeout = setTimeout(() => {
+                        this.hideCategoryOverlay();
+                        this.hideProjectOverlay();
+                    }, 300);
+                });
             });
         },
         
-        show(overlayId) {
-            this.hide(); // Close any open overlay
+        // Subcategory hover shows projects
+        setupSubcategoryHovers() {
+            document.querySelectorAll('.subcategory').forEach(subcategory => {
+                subcategory.addEventListener('mouseenter', () => {
+                    clearTimeout(this.hoverTimeout);
+                    this.showProjectOverlay(subcategory.dataset.subcategory);
+                });
+                
+                subcategory.addEventListener('mouseleave', () => {
+                    this.hoverTimeout = setTimeout(() => {
+                        this.hideProjectOverlay();
+                    }, 300);
+                });
+            });
             
-            const overlay = document.getElementById(overlayId);
+            // Keep project overlay open when hovering
+            document.querySelectorAll('.project-overlay').forEach(overlay => {
+                overlay.addEventListener('mouseenter', () => {
+                    clearTimeout(this.hoverTimeout);
+                });
+                
+                overlay.addEventListener('mouseleave', () => {
+                    this.hoverTimeout = setTimeout(() => {
+                        this.hideProjectOverlay();
+                    }, 300);
+                });
+            });
+        },
+        
+        // Project clicks navigate to project page
+        setupProjectClicks() {
+            document.querySelectorAll('.project-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const project = item.dataset.project;
+                    // Navigate to project page
+                    window.location.href = `projects/${project}.html`;
+                });
+            });
+        },
+        
+        // Category clicks (permanent selection)
+        setupClickHandlers() {
+            document.querySelectorAll('.category').forEach(category => {
+                category.addEventListener('click', () => {
+                    // Update active state
+                    document.querySelectorAll('.category').forEach(c => c.classList.remove('active'));
+                    category.classList.add('active');
+                    
+                    // Update view
+                    const categoryName = category.dataset.category;
+                    document.querySelectorAll('.category-view').forEach(view => {
+                        view.classList.remove('active');
+                    });
+                    document.getElementById(`${categoryName}-view`).classList.add('active');
+                });
+            });
+        },
+        
+        showCategoryOverlay(category) {
+            // Hide all overlays first
+            this.hideAllOverlays();
+            
+            // Show the category overlay
+            const overlay = document.getElementById(`${category}-overlay`);
             if (overlay) {
                 overlay.classList.add('active');
-                this.activeOverlay = overlay;
+                this.activeCategory = category;
             }
         },
         
-        hide() {
-            if (this.activeOverlay) {
-                this.activeOverlay.classList.remove('active');
-                this.activeOverlay = null;
+        hideCategoryOverlay() {
+            document.querySelectorAll('.category-overlay').forEach(overlay => {
+                overlay.classList.remove('active');
+            });
+            this.activeCategory = null;
+        },
+        
+        showProjectOverlay(subcategory) {
+            // Hide project overlays
+            this.hideProjectOverlay();
+            
+            // Show the project overlay
+            const overlay = document.getElementById(`${subcategory}-overlay`);
+            if (overlay) {
+                overlay.classList.add('active');
+                this.activeSubcategory = subcategory;
             }
+        },
+        
+        hideProjectOverlay() {
+            document.querySelectorAll('.project-overlay').forEach(overlay => {
+                overlay.classList.remove('active');
+            });
+            this.activeSubcategory = null;
+        },
+        
+        hideAllOverlays() {
+            this.hideCategoryOverlay();
+            this.hideProjectOverlay();
         }
     };
     
-    // Initialize
-    carousel.init();
-    overlays.init();
-    
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
+    // Initialize the system
+    worksSystem.init();
 });
