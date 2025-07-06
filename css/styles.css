@@ -1,4 +1,4 @@
-/* Complete CSS File - Fixed Alignment */
+/* Complete CSS File - Fixed Alignment and Positioning */
 
 /* Reset */
 * {
@@ -11,12 +11,13 @@ body {
     font-family: 'EB Garamond', serif;
     background: white;
     color: black;
+    overflow-x: hidden;
 }
 
 /* Fixed Container */
 .container {
     width: 1728px;
-    height: 1117px;
+    min-height: 100vh;
     position: relative;
     margin: 0 auto;
     background: white;
@@ -24,50 +25,59 @@ body {
 
 /* Navigation - FIXED POSITION */
 .nav-header {
-    width: 1728px;
-    height: 183px; /* Extended to include nav links */
+    width: 100%;
+    height: 79px;
     background: white;
     border-bottom: 1px solid #EEEEEE;
-    position: fixed; /* Changed from absolute to fixed */
+    position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     z-index: 2000;
+}
+
+.nav-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #EEEEEE;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     position: absolute;
-    top: 156px; /* Exact position from HTML */
-    left: 1252px; /* Starting position of About */
-    gap: 46px; /* Calculated gap between items */
+    bottom: 0; /* Align to bottom of nav */
+    right: 70px; /* 1728 - 1658 = 70px from right */
+    gap: 46px;
+    height: 27px;
+    align-items: flex-end;
 }
 
 .nav-link {
-    width: 108px;
-    height: 27px;
     font-size: 30px;
     font-weight: 700;
     text-decoration: none;
     color: black;
     text-align: center;
     display: block;
+    line-height: 27px;
 }
 
 .nav-link.active {
     color: #FF2F2F;
 }
 
-/* Logo - FIXED POSITION */
+/* Logo - FIXED POSITION WITH BOTTOM ALIGNMENT */
 .logo {
     width: 94px;
     height: 96px;
     background: #ACACAC;
-    position: fixed; /* Changed from absolute to fixed */
-    left: 50%;
-    transform: translateX(-864px); /* Half of 1728px - 82px */
-    top: 99px;
+    position: fixed;
+    left: 82px;
+    bottom: calc(100vh - 183px); /* Bottom aligns with nav text */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,7 +88,8 @@ body {
 /* LANDING PAGE STYLES */
 .home-grid {
     position: relative;
-    padding-top: 217px; /* Account for fixed header */
+    width: 1728px;
+    height: 100vh;
 }
 
 /* Intro Section */
@@ -130,20 +141,18 @@ body {
     width: 951px;
     height: 822px;
     position: absolute;
-    left: 707px;
+    right: 70px; /* Same as nav right margin */
     top: 217px;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #EEEEEE;
     padding: 16px 26px;
 }
-
-/* Ensure works box right edge aligns with Connect right edge */
-/* 707px + 951px = 1658px (70px from right edge, same as nav) */
 
 .works-section h2 {
     font-size: 45px;
     font-weight: 400;
     text-align: right;
     margin-bottom: 50px;
+    padding-right: 26px;
 }
 
 .carousel {
@@ -201,7 +210,9 @@ body {
 
 /* WORKS PAGE STYLES */
 .works-layout {
-    padding-top: 217px; /* Account for fixed header */
+    width: 1728px;
+    min-height: 100vh;
+    position: relative;
 }
 
 .works-layout h1 {
@@ -254,7 +265,7 @@ body {
 .overlay,
 .category-overlay,
 .project-overlay {
-    position: fixed; /* Changed to fixed so they stay in viewport */
+    position: fixed;
     background: white;
     border: 2px solid black;
     padding: 30px;
@@ -269,24 +280,21 @@ body {
     display: block;
 }
 
-/* Overlay Positions - Adjusted for fixed positioning */
+/* Overlay Positions */
 #architecture-overlay {
-    left: 50%;
-    transform: translateX(-432px); /* Centered then offset */
+    left: 430px;
     top: 343px;
     min-width: 500px;
 }
 
 #design-overlay {
-    left: 50%;
-    transform: translateX(-432px);
+    left: 430px;
     top: 462px;
     min-width: 400px;
 }
 
 #freehand-overlay {
-    left: 50%;
-    transform: translateX(-432px);
+    left: 430px;
     top: 582px;
     min-width: 600px;
 }
@@ -310,22 +318,19 @@ body {
 
 /* Project Overlays */
 #academic-overlay {
-    left: 50%;
-    transform: translateX(-432px);
+    left: 430px;
     top: 400px;
     min-width: 700px;
 }
 
 #professional-overlay {
-    left: 50%;
-    transform: translateX(-262px);
+    left: 600px;
     top: 400px;
     min-width: 700px;
 }
 
 #other-overlay {
-    left: 50%;
-    transform: translateX(-62px);
+    left: 800px;
     top: 400px;
     min-width: 300px;
 }
@@ -333,8 +338,7 @@ body {
 #graphic-overlay,
 #motion-overlay,
 #product-overlay {
-    left: 50%;
-    transform: translateX(-432px);
+    left: 430px;
     top: 520px;
     min-width: 400px;
 }
@@ -381,27 +385,17 @@ body {
     cursor: pointer;
 }
 
-/* Ensure logo bottom aligns with nav text bottom */
-/* Logo top: 99px, height: 96px = bottom at 195px */
-/* Nav text top: 156px, height: 27px = bottom at 183px */
-/* Adjustment needed: move logo up by 12px */
-.logo {
-    top: 87px !important; /* Adjusted to align bottoms */
+/* Viewport height constraint */
+@media (max-height: 1117px) {
+    .home-grid {
+        min-height: 1117px;
+    }
 }
 
-/* Media query for smaller screens */
-@media (max-width: 1728px) {
-    body {
-        overflow-x: auto;
-    }
-    
-    .nav-header {
-        left: 0;
-        transform: none;
-    }
-    
+/* For exact 1728x1117 viewport */
+@media (min-width: 1728px) and (min-height: 1117px) {
     .logo {
-        left: 82px;
-        transform: none;
+        top: 87px;
+        bottom: auto;
     }
 }
