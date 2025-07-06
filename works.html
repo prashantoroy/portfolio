@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Works - Prashanto Roy Portfolio">
     <title>Works - Prashanto Roy</title>
     
     <!-- Fonts -->
@@ -10,24 +11,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/pages.css">
-    <link rel="stylesheet" href="css/utilities.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <!-- Navigation Header -->
+    <!-- Navigation -->
     <nav class="nav-header">
         <div class="container">
             <div class="nav-container">
-                <div class="logo-placeholder">
-                    <img src="images/logo.png" alt="Prashanto Roy Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='LOGO';">
-                </div>
+                <div class="logo">LOGO</div>
                 <ul class="nav-links">
                     <li><a href="index.html" class="nav-link">About</a></li>
                     <li><a href="works.html" class="nav-link active">Works</a></li>
@@ -37,73 +30,155 @@
         </div>
     </nav>
 
-    <!-- Works Page Content -->
-    <div class="works-page-layout">
-        <div class="container-fluid">
-            <div class="works-horizontal-grid">
-                <!-- Left Sidebar - Categories -->
-                <aside class="works-sidebar-vertical">
-                    <h1 class="text-heading-lg mb-3">WORKS</h1>
-                    <div class="works-categories-vertical">
-                        <div class="work-category-vertical active" data-category="architecture">
-                            Architecture
-                        </div>
-                        <div class="work-category-vertical" data-category="design">
-                            Design
-                        </div>
-                        <div class="work-category-vertical" data-category="freehand">
-                            Freehand
-                        </div>
-                    </div>
-                </aside>
+    <!-- Works Content -->
+    <main class="works-layout">
+        <!-- Left Sidebar -->
+        <aside class="works-sidebar">
+            <h1 class="heading-lg">WORKS</h1>
+            <div class="categories">
+                <div class="category active" data-category="architecture">Architecture</div>
+                <div class="category" data-category="design">Design</div>
+                <div class="category" data-category="freehand">Freehand</div>
+            </div>
+        </aside>
 
-                <!-- Right Content - Subcategories and Projects -->
-                <main class="works-content-horizontal">
-                    <!-- Architecture Subcategories -->
-                    <div id="architecture-content" class="category-content">
-                        <div class="subcategories-horizontal">
-                            <div class="subcategory-item active" data-subcategory="academic">Academic</div>
-                            <div class="subcategory-item" data-subcategory="professional">Professional</div>
-                            <div class="subcategory-item" data-subcategory="other">Other Projects</div>
-                        </div>
-                        <div class="projects-display">
-                            <!-- Projects will be loaded here -->
-                        </div>
-                    </div>
+        <!-- Right Content Area -->
+        <section class="works-content">
+            <!-- Default: Architecture View -->
+            <div class="category-view active" id="architecture-view">
+                <!-- Empty - Subcategories appear on hover -->
+            </div>
+            
+            <div class="category-view" id="design-view">
+                <!-- Empty - Subcategories appear on hover -->
+            </div>
+            
+            <div class="category-view" id="freehand-view">
+                <!-- Empty - Content appears on hover -->
+            </div>
+        </section>
+    </main>
 
-                    <!-- Design Subcategories -->
-                    <div id="design-content" class="category-content hidden">
-                        <div class="subcategories-horizontal">
-                            <div class="subcategory-item active" data-subcategory="graphic">Graphic</div>
-                            <div class="subcategory-item" data-subcategory="motion">Motion</div>
-                            <div class="subcategory-item" data-subcategory="product">Product</div>
-                        </div>
-                        <div class="projects-display">
-                            <!-- Projects will be loaded here -->
-                        </div>
-                    </div>
+    <!-- Category Hover Overlays -->
+    
+    <!-- Architecture Overlay -->
+    <div class="category-overlay" id="architecture-overlay">
+        <div class="subcategories">
+            <div class="subcategory" data-subcategory="academic">Academic</div>
+            <div class="subcategory" data-subcategory="professional">Professional</div>
+            <div class="subcategory" data-subcategory="other">Other Projects</div>
+        </div>
+    </div>
 
-                    <!-- Freehand Content -->
-                    <div id="freehand-content" class="category-content hidden">
-                        <div class="projects-display">
-                            <!-- Freehand projects will be loaded here -->
-                        </div>
-                    </div>
-                </main>
+    <!-- Design Overlay -->
+    <div class="category-overlay" id="design-overlay">
+        <div class="subcategories">
+            <div class="subcategory" data-subcategory="graphic">Graphic</div>
+            <div class="subcategory" data-subcategory="motion">Motion</div>
+            <div class="subcategory" data-subcategory="product">Product</div>
+        </div>
+    </div>
+
+    <!-- Freehand Overlay -->
+    <div class="category-overlay" id="freehand-overlay">
+        <div class="subcategories">
+            <div class="subcategory" data-subcategory="sketches">Sketches</div>
+            <div class="subcategory" data-subcategory="paintings">Paintings</div>
+        </div>
+    </div>
+
+    <!-- Subcategory Project Overlays -->
+    
+    <!-- Academic Projects Overlay -->
+    <div class="project-overlay" id="academic-overlay">
+        <div class="project-grid">
+            <div class="project-item" data-project="sarojini-nagar">
+                <img src="images/projects/sarojini-nagar/thumb.jpg" alt="Sarojini Nagar">
+                <p>Sarojini Nagar Urban Design</p>
+            </div>
+            <div class="project-item" data-project="thesis">
+                <img src="images/projects/thesis/thumb.jpg" alt="Thesis">
+                <p>Thesis</p>
+            </div>
+            <div class="project-item" data-project="federated-bim">
+                <img src="images/projects/fed-bim/thumb.jpg" alt="Federated BIM">
+                <p>Federated BIM</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Professional Projects Overlay -->
+    <div class="project-overlay" id="professional-overlay">
+        <div class="project-grid">
+            <div class="project-item" data-project="dda">
+                <img src="images/projects/dda/thumb.jpg" alt="Delhi Dev Authority">
+                <p>Delhi Dev. Authority</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Other Projects Overlay -->
+    <div class="project-overlay" id="other-overlay">
+        <div class="project-grid">
+            <div class="project-item" data-project="competitions">
+                <img src="images/projects/competitions/thumb.jpg" alt="Competitions">
+                <p>Competition Entries</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Design Subcategory Overlays -->
+    <div class="project-overlay" id="graphic-overlay">
+        <div class="project-grid">
+            <div class="project-item" data-project="branding">
+                <img src="images/projects/branding/thumb.jpg" alt="Branding">
+                <p>Brand Identity</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-overlay" id="motion-overlay">
+        <div class="project-grid">
+            <div class="project-item" data-project="animation">
+                <img src="images/projects/animation/thumb.jpg" alt="Animation">
+                <p>Motion Graphics</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-overlay" id="product-overlay">
+        <div class="project-grid">
+            <div class="project-item" data-project="furniture">
+                <img src="images/projects/furniture/thumb.jpg" alt="Furniture">
+                <p>Product Design</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Freehand Overlays -->
+    <div class="project-overlay" id="sketches-overlay">
+        <div class="project-grid">
+            <div class="project-item" data-project="urban-sketches">
+                <img src="images/projects/sketches/thumb.jpg" alt="Sketches">
+                <p>Urban Sketches</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-overlay" id="paintings-overlay">
+        <div class="project-grid">
+            <div class="project-item" data-project="formnorm">
+                <img src="images/projects/formnorm/thumb.jpg" alt="Formnorm">
+                <p>Formnorm D & B</p>
+            </div>
+            <div class="project-item" data-project="freelance">
+                <img src="images/projects/freelance/thumb.jpg" alt="Freelance">
+                <p>Freelance</p>
             </div>
         </div>
     </div>
 
     <!-- Scripts -->
-    <script src="js/config.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/pages/works.js"></script>
-    <script>
-        // Initialize Works Page
-        document.addEventListener('DOMContentLoaded', function() {
-            const worksPage = new WorksPage();
-            worksPage.init();
-        });
-    </script>
+    <script src="js/works.js"></script>
 </body>
 </html>
