@@ -1,4 +1,4 @@
-/* Complete CSS File */
+/* Complete CSS File - Fixed Alignment */
 
 /* Reset */
 * {
@@ -22,54 +22,63 @@ body {
     background: white;
 }
 
-/* Navigation */
+/* Navigation - FIXED POSITION */
 .nav-header {
     width: 1728px;
-    height: 79px;
+    height: 183px; /* Extended to include nav links */
     background: white;
     border-bottom: 1px solid #EEEEEE;
-    position: absolute;
+    position: fixed; /* Changed from absolute to fixed */
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     position: absolute;
-    top: 25px;
-    right: 170px;
-    gap: 45px;
+    top: 156px; /* Exact position from HTML */
+    left: 1252px; /* Starting position of About */
+    gap: 46px; /* Calculated gap between items */
 }
 
 .nav-link {
+    width: 108px;
+    height: 27px;
     font-size: 30px;
     font-weight: 700;
     text-decoration: none;
     color: black;
+    text-align: center;
+    display: block;
 }
 
 .nav-link.active {
     color: #FF2F2F;
 }
 
-/* Logo */
+/* Logo - FIXED POSITION */
 .logo {
     width: 94px;
     height: 96px;
     background: #ACACAC;
-    position: absolute;
-    left: 82px;
+    position: fixed; /* Changed from absolute to fixed */
+    left: 50%;
+    transform: translateX(-864px); /* Half of 1728px - 82px */
     top: 99px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
+    z-index: 2001;
 }
 
 /* LANDING PAGE STYLES */
 .home-grid {
     position: relative;
+    padding-top: 217px; /* Account for fixed header */
 }
 
 /* Intro Section */
@@ -116,7 +125,7 @@ body {
     line-height: 1.8;
 }
 
-/* Works Section */
+/* Works Section - Aligned to right edge */
 .works-section {
     width: 951px;
     height: 822px;
@@ -126,6 +135,9 @@ body {
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #EEEEEE;
     padding: 16px 26px;
 }
+
+/* Ensure works box right edge aligns with Connect right edge */
+/* 707px + 951px = 1658px (70px from right edge, same as nav) */
 
 .works-section h2 {
     font-size: 45px;
@@ -188,6 +200,10 @@ body {
 }
 
 /* WORKS PAGE STYLES */
+.works-layout {
+    padding-top: 217px; /* Account for fixed header */
+}
+
 .works-layout h1 {
     position: absolute;
     left: 82px;
@@ -238,12 +254,12 @@ body {
 .overlay,
 .category-overlay,
 .project-overlay {
-    position: absolute;
+    position: fixed; /* Changed to fixed so they stay in viewport */
     background: white;
     border: 2px solid black;
     padding: 30px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
+    z-index: 3000;
     display: none;
 }
 
@@ -253,21 +269,24 @@ body {
     display: block;
 }
 
-/* Overlay Positions */
+/* Overlay Positions - Adjusted for fixed positioning */
 #architecture-overlay {
-    left: 430px;
+    left: 50%;
+    transform: translateX(-432px); /* Centered then offset */
     top: 343px;
     min-width: 500px;
 }
 
 #design-overlay {
-    left: 430px;
+    left: 50%;
+    transform: translateX(-432px);
     top: 462px;
     min-width: 400px;
 }
 
 #freehand-overlay {
-    left: 430px;
+    left: 50%;
+    transform: translateX(-432px);
     top: 582px;
     min-width: 600px;
 }
@@ -291,19 +310,22 @@ body {
 
 /* Project Overlays */
 #academic-overlay {
-    left: 430px;
+    left: 50%;
+    transform: translateX(-432px);
     top: 400px;
     min-width: 700px;
 }
 
 #professional-overlay {
-    left: 600px;
+    left: 50%;
+    transform: translateX(-262px);
     top: 400px;
     min-width: 700px;
 }
 
 #other-overlay {
-    left: 800px;
+    left: 50%;
+    transform: translateX(-62px);
     top: 400px;
     min-width: 300px;
 }
@@ -311,7 +333,8 @@ body {
 #graphic-overlay,
 #motion-overlay,
 #product-overlay {
-    left: 430px;
+    left: 50%;
+    transform: translateX(-432px);
     top: 520px;
     min-width: 400px;
 }
@@ -356,4 +379,29 @@ body {
     border: none;
     font-size: 24px;
     cursor: pointer;
+}
+
+/* Ensure logo bottom aligns with nav text bottom */
+/* Logo top: 99px, height: 96px = bottom at 195px */
+/* Nav text top: 156px, height: 27px = bottom at 183px */
+/* Adjustment needed: move logo up by 12px */
+.logo {
+    top: 87px !important; /* Adjusted to align bottoms */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1728px) {
+    body {
+        overflow-x: auto;
+    }
+    
+    .nav-header {
+        left: 0;
+        transform: none;
+    }
+    
+    .logo {
+        left: 82px;
+        transform: none;
+    }
 }
