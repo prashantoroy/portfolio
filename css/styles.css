@@ -1,6 +1,6 @@
 /* Complete CSS - Exact Match to Design */
 
-/* Reset */
+/* Add smooth transitions and hover effects */
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +12,101 @@ body {
     background: white;
     color: black;
     overflow: hidden;
+}
+
+/* Smooth page transitions */
+.home-page, .works-page {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.home-page.active, .works-page.active {
+    opacity: 1;
+}
+
+/* Navigation hover effects */
+.nav-link {
+    position: absolute;
+    width: 108px;
+    height: 27px;
+    background: white;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'EB Garamond', serif;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #FF2F2F;
+}
+
+/* Highlight hover effect */
+.intro-section p .highlight {
+    color: #FF2F2F;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.intro-section p .highlight:hover {
+    opacity: 0.8;
+}
+
+/* Category hover effects */
+.category {
+    width: 322px;
+    height: 120px;
+    font-size: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    font-family: 'EB Garamond', serif;
+    position: relative;
+}
+
+.category:hover {
+    color: #FF2F2F;
+}
+
+/* Carousel smooth transitions */
+.carousel-item {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Dot hover effects */
+.dot {
+    width: 27px;
+    height: 26px;
+    background: #B3B3B3;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    transform: scale(1.1);
+    background: #666;
+}
+
+.dot.active {
+    background: black;
+    transform: scale(1.15);
 }
 
 /* Main Container - Exact Dimensions */
@@ -35,13 +130,13 @@ body {
     border-bottom: 1px solid #EEEEEE;
 }
 
-/* Logo - Exact Position (moved up) */
+/* Logo - Exact Position (moved up more) */
 .logo {
     width: 94px;
     height: 96px;
     position: absolute;
     left: 82px;
-    top: 60px;  /* Changed from 99px to reduce top space */
+    top: 99px;
     background: #ACACAC;
     display: flex;
     align-items: center;
@@ -51,10 +146,10 @@ body {
     font-size: 18px;
 }
 
-/* Navigation - Exact Positions (moved up) */
+/* Navigation - Exact Positions */
 nav {
     position: absolute;
-    top: 117px;  /* Changed from 156px to reduce top space */
+    top: 156px;
     right: 0;
     width: 100%;
 }
@@ -93,7 +188,7 @@ nav {
     color: #FF2F2F;
 }
 
-/* Content Boxes - Exact Positions and Sizes (moved up) */
+/* Content Boxes - Exact Positions and Sizes */
 
 /* Intro Section */
 .intro-section {
@@ -101,11 +196,11 @@ nav {
     height: 472px;
     position: absolute;
     left: 82px;
-    top: 178px;  /* Changed from 217px to reduce top space */
+    top: 217px;
     background: #EEEEEE;
 }
 
-/* Prashanto Roy Text */
+/* Prashanto Roy Text - Inside intro section */
 .intro-section h1 {
     position: absolute;
     left: 21px;
@@ -116,11 +211,11 @@ nav {
     font-family: 'EB Garamond', serif;
 }
 
-/* Kindly allow me introduce myself */
+/* Kindly allow me introduce myself - Exact position */
 .intro-section p {
     position: absolute;
     left: 21px;
-    top: 114px;
+    top: 98px;  /* Adjusted to match design: 331px - 233px = 98px from h1 */
     font-family: 'EB Garamond', serif;
 }
 
@@ -143,7 +238,7 @@ nav {
     height: 311px;
     position: absolute;
     left: 82px;
-    top: 689px;  /* Changed from 728px to maintain spacing */
+    top: 728px;
     background: #EEEEEE;
 }
 
@@ -162,7 +257,7 @@ nav {
     height: 822px;
     position: absolute;
     left: 707px;
-    top: 178px;  /* Changed from 217px to reduce top space */
+    top: 217px;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #EEEEEE;
 }
 
@@ -176,14 +271,13 @@ nav {
     font-family: 'EB Garamond', serif;
 }
 
-/* Pagination Dots - Exact Positions */
+/* Pagination Dots - Exact Positions from design */
 .pagination-dots {
     position: absolute;
-    bottom: 58px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 127px;  /* Adjusted to match exact design position */
+    left: 475px;    /* Center within the works section */
     display: flex;
-    gap: 39px;
+    gap: 12px;
     align-items: center;
 }
 
@@ -196,26 +290,38 @@ nav {
     transition: background 0.3s;
 }
 
+/* Exact dot positions from design */
+.dot:nth-child(1) {
+    position: relative;
+}
+
+.dot:nth-child(2) {
+    position: relative;
+    left: 27px;
+}
+
+.dot:nth-child(3) {
+    position: relative;
+    left: 54px;
+}
+
+.dot:nth-child(4) {
+    position: relative;
+    left: 81px;
+}
+
 .dot.active {
     background: black;
 }
 
-/* Carousel */
+/* Carousel - Better positioning */
 .carousel {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
+    width: 85%;
     text-align: center;
-}
-
-.carousel-item {
-    display: none;
-}
-
-.carousel-item.active {
-    display: block;
 }
 
 .carousel-item h3 {
@@ -229,6 +335,7 @@ nav {
     font-size: 24px;
     font-weight: 400;
     font-family: 'EB Garamond', serif;
+    opacity: 0.8;
 }
 
 /* Contact Info */
@@ -314,17 +421,17 @@ nav {
 .works-layout h1 {
     position: absolute;
     left: 82px;
-    top: 238px;  /* Changed from 277px to reduce top space */
+    top: 277px;
     font-size: 40px;
     font-weight: 700;
     font-family: 'EB Garamond', serif;
 }
 
-/* Categories with exact styling */
+/* Categories with exact styling from design */
 .categories {
     position: absolute;
     left: 81px;
-    top: 304px;  /* Changed from 343px to reduce top space */
+    top: 343px;
     width: 326px;
 }
 
@@ -341,57 +448,63 @@ nav {
     position: relative;
 }
 
-/* Category positions and borders */
+/* Category positions and borders from design */
 .category[data-category="architecture"] {
     position: absolute;
     top: 0;
-}
-
-.category[data-category="architecture"]::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 326px;
-    height: 3px;
-    background: #888888;
+    color: black;
 }
 
 .category[data-category="design"] {
     position: absolute;
-    top: 120px;
-}
-
-.category[data-category="design"]::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 326px;
-    height: 3px;
-    background: #E9E9E9;
+    top: 119px;
+    color: black;
 }
 
 .category[data-category="freehand"] {
     position: absolute;
     top: 239px;
+    color: black;
 }
 
-.category[data-category="freehand"]::after {
+/* Underline styles from design */
+.works-layout h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 237px;
+    height: 3px;
+    background: #888888;
+}
+
+/* Category underlines */
+.category::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 326px;
     height: 3px;
+}
+
+.category[data-category="architecture"]::after {
+    background: #888888;
+}
+
+.category[data-category="design"]::after {
     background: #E9E9E9;
 }
 
-/* Bottom border for freehand */
+.category[data-category="freehand"]::after {
+    background: #E9E9E9;
+}
+
+/* Additional line at bottom */
 .categories::after {
     content: '';
     position: absolute;
-    bottom: -100px;
+    bottom: -59px;
     left: 0;
     width: 326px;
     height: 3px;
