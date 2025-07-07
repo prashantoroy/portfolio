@@ -11,18 +11,27 @@ body {
     font-family: 'EB Garamond', serif;
     background: white;
     color: black;
-    overflow: hidden;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
-/* Main Container - Exact Dimensions */
+/* Main Container - Centered with max width */
 .container {
-    width: 1728px;
-    height: 1117px;
+    width: 100%;
+    max-width: 1400px;
+    height: 100vh;
     position: relative;
     background: white;
-    overflow: hidden;
     margin: 0 auto;
+    padding: 0 20px;
 }
+
+/* Content wrapper removed - not needed */
 
 /* Browser Header Bar */
 .browser-header {
@@ -35,13 +44,13 @@ body {
     border-bottom: 1px solid #EEEEEE;
 }
 
-/* Logo - Exact Position */
+/* Logo - Centered Position */
 .logo {
     width: 94px;
     height: 96px;
     position: absolute;
-    left: 82px;
-    top: 99px;
+    left: 120px;
+    top: 60px;
     background: #ACACAC;
     display: flex;
     align-items: center;
@@ -51,76 +60,61 @@ body {
     font-size: 18px;
 }
 
-/* Navigation - Exact Positions */
+/* Navigation - Centered Positions */
 nav {
     position: absolute;
-    top: 156px;
-    right: 0;
-    width: 100%;
+    top: 80px;
+    right: 120px;
 }
 
 .nav-link {
-    position: absolute;
-    width: 108px;
-    height: 27px;
-    background: white;
-    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin-left: 40px;
     font-size: 30px;
     font-weight: 700;
     text-decoration: none;
     color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-family: 'EB Garamond', serif;
 }
 
-/* Individual Nav Positions */
-.nav-link.about {
-    left: 1252px;
-}
-
-.nav-link.works {
-    left: 1406px;
-}
-
+/* Remove nav position styles that were causing issues */
+.nav-link.about,
+.nav-link.works,
 .nav-link.connect {
-    left: 1549px;
-    width: 109px;
+    position: relative;
+    left: auto;
+    width: auto;
 }
 
 .nav-link.active {
     color: #FF2F2F;
 }
 
-/* Content Boxes - Exact Positions and Sizes */
+/* Content Boxes - Centered Positions */
 
 /* Intro Section */
 .intro-section {
-    width: 589px;
-    height: 472px;
+    width: 500px;
+    height: 400px;
     position: absolute;
-    left: 82px;
-    top: 217px;
+    left: 120px;
+    top: 200px;
     background: #EEEEEE;
+    padding: 40px;
 }
 
 /* Prashanto Roy Text */
 .intro-section h1 {
-    position: absolute;
-    left: 21px;
-    top: 16px;
     font-size: 45px;
     font-weight: 400;
     color: black;
     font-family: 'EB Garamond', serif;
+    margin-bottom: 40px;
 }
 
 /* Kindly allow me introduce myself */
 .intro-section p {
-    position: absolute;
-    left: 21px;
-    top: 114px;
     font-family: 'EB Garamond', serif;
 }
 
@@ -139,41 +133,39 @@ nav {
 
 /* Connect Section */
 .connect-section {
-    width: 589px;
-    height: 311px;
+    width: 500px;
+    height: 250px;
     position: absolute;
-    left: 82px;
-    top: 728px;
+    left: 120px;
+    bottom: 100px;
     background: #EEEEEE;
+    padding: 40px;
 }
 
 .connect-section h2 {
-    position: absolute;
-    left: 33px;
-    top: 34px;
     font-size: 45px;
     font-weight: 400;
     font-family: 'EB Garamond', serif;
+    margin-bottom: 30px;
 }
 
 /* Works Section */
 .works-section {
-    width: 951px;
-    height: 822px;
+    width: 600px;
+    height: 700px;
     position: absolute;
-    left: 707px;
-    top: 217px;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #EEEEEE;
+    right: 120px;
+    top: 200px;
+    background: #EEEEEE;
+    padding: 40px;
 }
 
 .works-section h2 {
-    position: absolute;
-    right: 26px;
-    top: 16px;
     text-align: right;
     font-size: 45px;
     font-weight: 400;
     font-family: 'EB Garamond', serif;
+    margin-bottom: 40px;
 }
 
 /* Pagination Dots - Exact Positions */
@@ -233,9 +225,6 @@ nav {
 
 /* Contact Info */
 .contact-info {
-    position: absolute;
-    top: 120px;
-    left: 33px;
     font-size: 18px;
     line-height: 1.8;
     font-family: 'EB Garamond', serif;
