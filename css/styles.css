@@ -1,4 +1,4 @@
-/* Complete CSS - Exact Match */
+/* Complete CSS - Exact Match to Design */
 
 /* Reset */
 * {
@@ -47,17 +47,20 @@ body {
     align-items: center;
     justify-content: center;
     font-weight: 700;
+    color: white;
+    font-size: 18px;
 }
 
 /* Navigation - Exact Positions */
-.nav-links {
-    list-style: none;
-    display: flex;
+nav {
     position: absolute;
     top: 156px;
+    right: 0;
+    width: 100%;
 }
 
 .nav-link {
+    position: absolute;
     width: 108px;
     height: 27px;
     background: white;
@@ -69,21 +72,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'EB Garamond', serif;
 }
 
 /* Individual Nav Positions */
 .nav-link.about {
-    position: absolute;
     left: 1252px;
 }
 
 .nav-link.works {
-    position: absolute;
     left: 1406px;
 }
 
 .nav-link.connect {
-    position: absolute;
     left: 1549px;
     width: 109px;
 }
@@ -106,22 +107,21 @@ body {
 
 /* Prashanto Roy Text */
 .intro-section h1 {
-    width: 274px;
-    height: 45px;
     position: absolute;
     left: 21px;
     top: 16px;
     font-size: 45px;
     font-weight: 400;
+    color: black;
+    font-family: 'EB Garamond', serif;
 }
 
 /* Kindly allow me introduce myself */
 .intro-section p {
-    width: 378px;
-    height: 67px;
     position: absolute;
     left: 21px;
     top: 114px;
+    font-family: 'EB Garamond', serif;
 }
 
 .intro-section p .normal {
@@ -148,13 +148,12 @@ body {
 }
 
 .connect-section h2 {
-    width: 276px;
-    height: 59px;
     position: absolute;
     left: 33px;
     top: 34px;
     font-size: 45px;
     font-weight: 400;
+    font-family: 'EB Garamond', serif;
 }
 
 /* Works Section */
@@ -168,14 +167,13 @@ body {
 }
 
 .works-section h2 {
-    width: 174px;
-    height: 59px;
     position: absolute;
     right: 26px;
     top: 16px;
     text-align: right;
     font-size: 45px;
     font-weight: 400;
+    font-family: 'EB Garamond', serif;
 }
 
 /* Pagination Dots - Exact Positions */
@@ -185,7 +183,8 @@ body {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 12px;
+    gap: 39px;
+    align-items: center;
 }
 
 .dot {
@@ -194,27 +193,7 @@ body {
     background: #B3B3B3;
     border-radius: 50%;
     cursor: pointer;
-}
-
-/* Individual Dot Positions */
-.dot:nth-child(1) {
-    position: absolute;
-    left: -58px;
-}
-
-.dot:nth-child(2) {
-    position: absolute;
-    left: -19px;
-}
-
-.dot:nth-child(3) {
-    position: absolute;
-    left: 20px;
-}
-
-.dot:nth-child(4) {
-    position: absolute;
-    left: 59px;
+    transition: background 0.3s;
 }
 
 .dot.active {
@@ -243,11 +222,13 @@ body {
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 20px;
+    font-family: 'EB Garamond', serif;
 }
 
 .carousel-item p {
     font-size: 24px;
     font-weight: 400;
+    font-family: 'EB Garamond', serif;
 }
 
 /* Contact Info */
@@ -257,6 +238,7 @@ body {
     left: 33px;
     font-size: 18px;
     line-height: 1.8;
+    font-family: 'EB Garamond', serif;
 }
 
 /* Overlays */
@@ -290,6 +272,34 @@ body {
     border: none;
     font-size: 24px;
     cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+.overlay h3, .overlay h4 {
+    font-family: 'EB Garamond', serif;
+    margin-bottom: 15px;
+}
+
+.overlay p, .overlay li {
+    font-family: 'EB Garamond', serif;
+    line-height: 1.6;
+}
+
+/* Page visibility */
+.home-page {
+    display: none;
+}
+
+.home-page.active {
+    display: block;
+}
+
+.works-page {
+    display: none;
+}
+
+.works-page.active {
+    display: block;
 }
 
 /* Works Page Styles */
@@ -307,13 +317,15 @@ body {
     top: 277px;
     font-size: 40px;
     font-weight: 700;
+    font-family: 'EB Garamond', serif;
 }
 
-/* Categories */
+/* Categories with exact styling */
 .categories {
     position: absolute;
     left: 81px;
     top: 343px;
+    width: 326px;
 }
 
 .category {
@@ -325,21 +337,65 @@ body {
     display: flex;
     align-items: center;
     transition: color 0.3s;
+    font-family: 'EB Garamond', serif;
+    position: relative;
 }
 
+/* Category positions and borders */
 .category[data-category="architecture"] {
     position: absolute;
     top: 0;
 }
 
+.category[data-category="architecture"]::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 326px;
+    height: 3px;
+    background: #888888;
+}
+
 .category[data-category="design"] {
     position: absolute;
-    top: 119px;
+    top: 120px;
+}
+
+.category[data-category="design"]::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 326px;
+    height: 3px;
+    background: #E9E9E9;
 }
 
 .category[data-category="freehand"] {
     position: absolute;
     top: 239px;
+}
+
+.category[data-category="freehand"]::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 326px;
+    height: 3px;
+    background: #E9E9E9;
+}
+
+/* Bottom border for freehand */
+.categories::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    width: 326px;
+    height: 3px;
+    background: #E9E9E9;
 }
 
 .category:hover,
@@ -392,6 +448,7 @@ body {
     cursor: pointer;
     padding: 10px 0;
     transition: all 0.3s;
+    font-family: 'EB Garamond', serif;
 }
 
 .subcategory:hover {
@@ -416,8 +473,10 @@ body {
     object-fit: cover;
     border: 1px solid #EEEEEE;
     margin-bottom: 10px;
+    background: #f0f0f0;
 }
 
 .project-item p {
     font-size: 18px;
+    font-family: 'EB Garamond', serif;
 }
