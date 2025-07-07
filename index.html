@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
+    <!-- Home Page -->
+    <div class="container home-page active" id="home-page">
         <!-- Browser Header -->
         <div class="browser-header"></div>
         
@@ -19,8 +20,8 @@
         
         <!-- Navigation -->
         <nav>
-            <a href="index.html" class="nav-link about active">About</a>
-            <a href="works.html" class="nav-link works">Works</a>
+            <a href="#" class="nav-link about active" data-page="home">About</a>
+            <a href="#" class="nav-link works" data-page="works">Works</a>
             <a href="#connect" class="nav-link connect">Connect</a>
         </nav>
         
@@ -67,6 +68,146 @@
             </div>
         </section>
     </div>
+
+    <!-- Works Page -->
+    <div class="container works-page" id="works-page">
+        <!-- Browser Header -->
+        <div class="browser-header"></div>
+        
+        <!-- Logo -->
+        <div class="logo">LOGO</div>
+        
+        <!-- Navigation -->
+        <nav>
+            <a href="#" class="nav-link about" data-page="home">About</a>
+            <a href="#" class="nav-link works active" data-page="works">Works</a>
+            <a href="#connect" class="nav-link connect" data-page="home">Connect</a>
+        </nav>
+
+        <!-- Works Content -->
+        <main class="works-layout">
+            <h1>WORKS</h1>
+
+            <!-- Categories - Left Sidebar -->
+            <div class="categories">
+                <div class="category" data-category="architecture">Architecture</div>
+                <div class="category" data-category="design">Design</div>
+                <div class="category" data-category="freehand">Freehand</div>
+            </div>
+        </main>
+
+        <!-- OVERLAYS - Outside of main content -->
+        
+        <!-- Architecture Subcategories Overlay -->
+        <div class="category-overlay" id="architecture-overlay">
+            <div class="subcategories">
+                <div class="subcategory" data-subcategory="academic">Academic</div>
+                <div class="subcategory" data-subcategory="professional">Professional</div>
+                <div class="subcategory" data-subcategory="other">Other Projects</div>
+            </div>
+        </div>
+
+        <!-- Design Subcategories Overlay -->
+        <div class="category-overlay" id="design-overlay">
+            <div class="subcategories">
+                <div class="subcategory" data-subcategory="graphic">Graphic</div>
+                <div class="subcategory" data-subcategory="motion">Motion</div>
+                <div class="subcategory" data-subcategory="product">Product</div>
+            </div>
+        </div>
+
+        <!-- Freehand Projects Overlay (no subcategories) -->
+        <div class="category-overlay" id="freehand-overlay">
+            <div class="project-grid">
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Sketches">
+                    <p>Urban Sketches</p>
+                </div>
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Paintings">
+                    <p>Paintings</p>
+                </div>
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Drawings">
+                    <p>Drawings</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Academic Projects Overlay -->
+        <div class="project-overlay" id="academic-overlay">
+            <div class="project-grid">
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Sarojini Nagar">
+                    <p>Sarojini Nagar Urban Design</p>
+                </div>
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Thesis">
+                    <p>Thesis</p>
+                </div>
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Fed BIM">
+                    <p>Federated BIM</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Projects Overlay -->
+        <div class="project-overlay" id="professional-overlay">
+            <div class="project-grid">
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="DDA">
+                    <p>Delhi Dev. Authority</p>
+                </div>
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Formnorm">
+                    <p>Formnorm D & B</p>
+                </div>
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Freelance">
+                    <p>Freelance</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Other Projects Overlay -->
+        <div class="project-overlay" id="other-overlay">
+            <div class="project-grid">
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="CR Park">
+                    <p>CR Park Market</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Design Subcategory Overlays -->
+        <div class="project-overlay" id="graphic-overlay">
+            <div class="project-grid">
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Branding">
+                    <p>Brand Identity</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-overlay" id="motion-overlay">
+            <div class="project-grid">
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Motion">
+                    <p>Motion Graphics</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-overlay" id="product-overlay">
+            <div class="project-grid">
+                <div class="project-item">
+                    <img src="images/placeholder.jpg" alt="Product">
+                    <p>Furniture Design</p>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <!-- Introduce Overlay -->
     <div id="introduce-overlay" class="overlay">
@@ -85,7 +226,7 @@
             <li>Public Space Revitalization</li>
         </ul>
     </div>
-    
+
     <script src="js/main.js"></script>
 </body>
 </html>
