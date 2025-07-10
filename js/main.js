@@ -28,24 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
         resizeTimer = setTimeout(handleResponsiveScaling, 250);
     });
     
-    // Page navigation for SPA approach
-    const navLinks = document.querySelectorAll('a[href="works.html"], a[href="index.html"]');
-    const landingPage = document.querySelector('.element-landing-page');
-    const worksPage = document.querySelector('.works-page');
+    // Update navigation links for works.html
+    const worksLinks = document.querySelectorAll('a[href="works.html"]');
     
-    navLinks.forEach(link => {
+    worksLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            if (this.getAttribute('href') === 'works.html' && worksPage) {
-                e.preventDefault();
-                landingPage.style.display = 'none';
-                worksPage.style.display = 'flex';
-                window.scrollTo(0, 0);
-            } else if (this.getAttribute('href') === 'index.html' && landingPage) {
-                e.preventDefault();
-                worksPage.style.display = 'none';
-                landingPage.style.display = 'flex';
-                window.scrollTo(0, 0);
-            }
+            // Allow default behavior for works.html links
+            // The page will navigate normally to works.html
         });
     });
     
