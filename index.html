@@ -1,235 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prashanto Roy - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <title>Prashanto Roy - Portfolio</title>
 </head>
 <body>
-    <!-- Mobile Message -->
-    <div class="mobile-message" style="display: none;"></div>
-    
-    <!-- Home Page -->
-    <div class="container home-page active" id="home-page">
-        <!-- Browser Header -->
-        <div class="browser-header"></div>
-        
-        <!-- Logo -->
-        <div class="logo">LOGO</div>
-        
-        <!-- Navigation -->
-        <nav>
-            <a href="index.html" class="nav-link about active">About</a>
-            <a href="works.html" class="nav-link works">Works</a>
-            <a href="#connect" class="nav-link connect">Connect</a>
-        </nav>
-        
-        <!-- Intro Section -->
-        <section class="intro-section">
-            <h1>Prashanto Roy</h1>
-            <p>
-                <span class="normal">Kindly allow me </span><span class="highlight" data-overlay="introduce">introduce</span><span class="normal"> myself.</span>
-            </p>
-        </section>
-        
-        <!-- Connect Section -->
-        <section class="connect-section" id="connect">
-            <h2>Connect</h2>
-            <div class="contact-info">
-                <p>Email: prashanto@example.com</p>
-                <p>LinkedIn: Prashanto Roy</p>
-                <p>Portfolio: Download PDF</p>
-            </div>
-        </section>
-        
-        <!-- Works Section -->
-        <section class="works-section">
-            <h2>Works</h2>
-            <div class="carousel">
-                <div class="carousel-item active">
-                    <h3>Architecture</h3>
-                    <p>Sustainable design solutions</p>
-                </div>
-                <div class="carousel-item">
-                    <h3>Design</h3>
-                    <p>Creative visual explorations</p>
-                </div>
-                <div class="carousel-item">
-                    <h3>Freehand</h3>
-                    <p>Artistic sketches and drawings</p>
-                </div>
-            </div>
-            <div class="pagination-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </section>
+    <div class="element-landing-page">
+        <div class="div">
+            <!-- Signature/Logo -->
+            <img class="signature-graphic" src="img/signature-graphic-1.png" alt="Prashanto Roy's signature" />
+            
+            <!-- Navigation -->
+            <header>
+                <nav>
+                    <div class="frame">
+                        <a href="#about" class="text-wrapper-5">About</a>
+                    </div>
+                    <div class="about-wrapper">
+                        <a href="works.html" class="text-wrapper-5">Works</a>
+                    </div>
+                    <div class="overlap-wrapper">
+                        <div class="overlap-3">
+                            <a href="#connect" class="about">Connect</a>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            
+            <!-- Main Content -->
+            <main>
+                <!-- Intro Section -->
+                <section class="overlap">
+                    <h1 class="text-wrapper">Prashanto Roy</h1>
+                    <p class="kindly-allow-me">
+                        <span class="span">Kindly allow me </span>
+                        <span class="text-wrapper-2">introduce</span>
+                        <span class="span"> myself.</span>
+                    </p>
+                </section>
+                
+                <!-- Connect Section -->
+                <section class="overlap-group">
+                    <h2 class="text-wrapper-3">Connect</h2>
+                    <div class="contact-info">
+                        <p>Email: prashanto@example.com</p>
+                        <p>LinkedIn: Prashanto Roy</p>
+                        <p>Portfolio: Download PDF</p>
+                    </div>
+                </section>
+                
+                <!-- Works Section -->
+                <section class="group">
+                    <div class="overlap-2">
+                        <div class="overlap-group-wrapper">
+                            <div class="div-wrapper">
+                                <h2 class="text-wrapper-4">Works</h2>
+                                <div class="carousel">
+                                    <div class="carousel-item active">
+                                        <h3>Architecture</h3>
+                                        <p>Sustainable design solutions</p>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <h3>Design</h3>
+                                        <p>Creative visual explorations</p>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <h3>Freehand</h3>
+                                        <p>Artistic sketches and drawings</p>
+                                    </div>
+                                </div>
+                                <!-- Pagination Dots -->
+                                <div class="ellipse-2"></div>
+                                <div class="ellipse-3"></div>
+                                <div class="ellipse"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
     </div>
 
-    <!-- Works Page -->
-    <div class="container works-page" id="works-page">
-        <!-- Browser Header -->
-        <div class="browser-header"></div>
-        
-        <!-- Logo -->
-        <div class="logo">LOGO</div>
-        
-        <!-- Navigation -->
-        <nav>
-            <a href="#" class="nav-link about" data-page="home">About</a>
-            <a href="#" class="nav-link works active" data-page="works">Works</a>
-            <a href="#" class="nav-link connect" data-page="home">Connect</a>
-        </nav>
-
-        <!-- Works Content -->
-        <main class="works-layout">
-            <h1>WORKS</h1>
-
-            <!-- Categories - Left Sidebar -->
-            <div class="categories">
-                <div class="category" data-category="architecture">Architecture</div>
-                <div class="category" data-category="design">Design</div>
-                <div class="category" data-category="freehand">Freehand</div>
-            </div>
-        </main>
-
-        <!-- OVERLAYS - Outside of main content -->
-        
-        <!-- Architecture Subcategories Overlay -->
-        <div class="category-overlay" id="architecture-overlay">
-            <div class="subcategories">
-                <div class="subcategory" data-subcategory="academic">Academic</div>
-                <div class="subcategory" data-subcategory="professional">Professional</div>
-                <div class="subcategory" data-subcategory="other">Other Projects</div>
-            </div>
-        </div>
-
-        <!-- Design Subcategories Overlay -->
-        <div class="category-overlay" id="design-overlay">
-            <div class="subcategories">
-                <div class="subcategory" data-subcategory="graphic">Graphic</div>
-                <div class="subcategory" data-subcategory="motion">Motion</div>
-                <div class="subcategory" data-subcategory="product">Product</div>
-            </div>
-        </div>
-
-        <!-- Freehand Projects Overlay (no subcategories) -->
-        <div class="category-overlay" id="freehand-overlay">
-            <div class="project-grid">
-                <div class="project-item">
-                    <img src="images/placeholder.jpg" alt="Sketches">
-                    <p>Urban Sketches</p>
+    <!-- Works Page (Initially Hidden) -->
+    <div class="works-page" id="works-page" style="display: none;">
+        <div class="div">
+            <!-- Signature/Logo -->
+            <img class="signature-graphic" src="img/signature-graphic-1.png" alt="Prashanto Roy's signature" />
+            
+            <!-- Navigation -->
+            <header>
+                <nav>
+                    <div class="frame">
+                        <a href="index.html" class="text-wrapper-5">About</a>
+                    </div>
+                    <div class="about-wrapper">
+                        <a href="#" class="text-wrapper-5 active">Works</a>
+                    </div>
+                    <div class="overlap-wrapper">
+                        <div class="overlap-3">
+                            <a href="index.html#connect" class="about">Connect</a>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            
+            <main class="works-layout">
+                <h1>WORKS</h1>
+                
+                <!-- Categories -->
+                <div class="categories">
+                    <div class="category" data-category="architecture">Architecture</div>
+                    <div class="category" data-category="design">Design</div>
+                    <div class="category" data-category="freehand">Freehand</div>
                 </div>
-                <div class="project-item">
-                    <img src="images/placeholder.jpg" alt="Paintings">
-                    <p>Paintings</p>
+                
+                <!-- Category Overlays -->
+                <div class="category-overlay" id="architecture-overlay">
+                    <div class="subcategories">
+                        <div class="subcategory" data-subcategory="academic">Academic</div>
+                        <div class="subcategory" data-subcategory="professional">Professional</div>
+                        <div class="subcategory" data-subcategory="other">Other Projects</div>
+                    </div>
                 </div>
-                <div class="project-item">
-                    <img src="images/placeholder.jpg" alt="Drawings">
-                    <p>Drawings</p>
+                
+                <div class="category-overlay" id="design-overlay">
+                    <div class="subcategories">
+                        <div class="subcategory" data-subcategory="graphic">Graphic</div>
+                        <div class="subcategory" data-subcategory="motion">Motion</div>
+                        <div class="subcategory" data-subcategory="product">Product</div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Academic Projects Overlay -->
-        <div class="project-overlay" id="academic-overlay">
-            <div class="project-grid">
-                <div class="project-item">
-                    <img src="images/placeholder.jpg" alt="Sarojini Nagar">
-                    <p>Sarojini Nagar Urban Design</p>
+                
+                <!-- Freehand Projects (No subcategories, direct projects) -->
+                <div class="category-overlay" id="freehand-overlay">
+                    <div class="project-list">
+                        <div class="project-item-text">Urban Sketches</div>
+                        <div class="project-item-text">Paintings</div>
+                        <div class="project-item-text">Drawings</div>
+                    </div>
                 </div>
-                <div class="project-item">
-                    <img src="images/placeholder.jpg" alt="Thesis">
-                    <p>Thesis</p>
+                
+                <!-- Project Overlays -->
+                <div class="project-overlay" id="academic-overlay">
+                    <div class="project-grid">
+                        <div class="project-item">
+                            <img src="images/placeholder.jpg" alt="Sarojini Nagar">
+                            <p>Sarojini Nagar Urban Design</p>
+                        </div>
+                        <div class="project-item">
+                            <img src="images/placeholder.jpg" alt="Thesis">
+                            <p>Thesis</p>
+                        </div>
+                        <div class="project-item">
+                            <img src="images/placeholder.jpg" alt="Fed BIM">
+                            <p>Federated BIM</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-item">
-                    <img src="images/placeholder.jpg" alt="Fed BIM">
-                    <p>Federated BIM</p>
+                
+                <div class="project-overlay" id="professional-overlay">
+                    <div class="project-grid">
+                        <div class="project-item">
+                            <img src="images/placeholder.jpg" alt="DDA">
+                            <p>Delhi Dev. Authority</p>
+                        </div>
+                        <div class="project-item">
+                            <img src="images/placeholder.jpg" alt="Formnorm">
+                            <p>Formnorm D & B</p>
+                        </div>
+                        <div class="project-item">
+                            <img src="images/placeholder.jpg" alt="Freelance">
+                            <p>Freelance</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Professional Projects Overlay -->
-        <div class="project-overlay" id="professional-overlay">
-            <div class="project-grid">
-                <div class="project-item">
-                    <img src="images/placeholder.jpg" alt="DDA">
-                    <p>Delhi Dev. Authority</p>
-                </div>
-                <div class="project-item">
-                    <img src="images/placeholder.jpg" alt="Formnorm">
-                    <p>Formnorm D & B</p>
-                </div>
-                <div class="project-item">
-                    <img src="images/placeholder.jpg" alt="Freelance">
-                    <p>Freelance</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Other Projects Overlay -->
-        <div class="project-overlay" id="other-overlay">
-            <div class="project-grid">
-                <div class="project-item">
-                    <img src="images/placeholder.jpg" alt="CR Park">
-                    <p>CR Park Market</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Design Subcategory Overlays -->
-        <div class="project-overlay" id="graphic-overlay">
-            <div class="project-grid">
-                <div class="project-item">
-                    <img src="images/placeholder.jpg" alt="Branding">
-                    <p>Brand Identity</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-overlay" id="motion-overlay">
-            <div class="project-grid">
-                <div class="project-item">
-                    <img src="images/placeholder.jpg" alt="Motion">
-                    <p>Motion Graphics</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-overlay" id="product-overlay">
-            <div class="project-grid">
-                <div class="project-item">
-                    <img src="images/placeholder.jpg" alt="Product">
-                    <p>Furniture Design</p>
-                </div>
-            </div>
+            </main>
         </div>
     </div>
     
-    <!-- Introduce Overlay -->
-    <div id="introduce-overlay" class="overlay">
-        <button class="overlay-close">&times;</button>
-        <h3>About Prashanto Roy</h3>
-        <p>Urban Designer and Architect with expertise in sustainable development, specializing in large-scale redevelopment projects and community-centered design solutions.</p>
-        <h4>Education</h4>
-        <ul>
-            <li>Master of Urban Design - School of Planning and Architecture, Delhi</li>
-            <li>Bachelor of Architecture</li>
-        </ul>
-        <h4>Focus Areas</h4>
-        <ul>
-            <li>Sustainable Urban Development</li>
-            <li>Community-Centered Design</li>
-            <li>Public Space Revitalization</li>
-        </ul>
-    </div>
-
     <script src="js/main.js"></script>
 </body>
 </html>
