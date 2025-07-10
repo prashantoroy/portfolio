@@ -1,6 +1,26 @@
 // Portfolio JavaScript - main.js
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Handle responsive scaling
+    function handleResponsiveScaling() {
+        const container = document.querySelector('.container');
+        const viewportWidth = window.innerWidth;
+        
+        // Show/hide mobile message
+        const mobileMessage = document.querySelector('.mobile-message');
+        if (viewportWidth < 768 && mobileMessage) {
+            mobileMessage.style.display = 'block';
+        } else if (mobileMessage) {
+            mobileMessage.style.display = 'none';
+        }
+    }
+    
+    // Initial scaling
+    handleResponsiveScaling();
+    
+    // Handle resize
+    window.addEventListener('resize', handleResponsiveScaling);
+    
     // Page elements
     const homePage = document.getElementById('home-page');
     const worksPage = document.getElementById('works-page');
