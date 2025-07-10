@@ -42,6 +42,17 @@ button:focus {
   outline-offset: 2px;
 }
 
+.nav-link:focus,
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.nav-button:focus,
+.nav-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
 /* Improve readability */
 body {
   line-height: 1.6;
@@ -70,4 +81,12 @@ html {
 ::-moz-selection {
   background-color: #ff2e2e;
   color: #ffffff;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
 }
